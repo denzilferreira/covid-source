@@ -1,0 +1,4 @@
+#Wed May 27 15:29:54 EEST 2020
+base.0=/mnt/f73abe57-067b-46fd-a55d-387c310d4f19/Projects/flutter_encounter/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
