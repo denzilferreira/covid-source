@@ -56,6 +56,7 @@ class _EncounterHomeState extends State<EncounterHome> {
                         "Encounter allows you to anonymously help health officials do pandemic tracking and cutting the chain of transmission.",
                         textAlign: TextAlign.justify),
                   ),
+
                   FutureBuilder<List<Country>>(
                     future: getLatestData(),
                     builder: (context, snapshot) {

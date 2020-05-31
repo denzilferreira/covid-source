@@ -12,6 +12,20 @@ Future<List<Country>> getLatestData() async {
       List<Report>.from(data[country].map((item) => Report.fromJson(item)));
       countriesData.add(new Country(country: country, reports: reports));
     }
+
+    //Add worldwide stats: TODO: need to have this as a timeseries instead of the maximum per country
+//    var confirmedTotal = 0;
+//    var deathsTotal = 0;
+//    var recoveredTotal = 0;
+//    for(Country country in countriesData) {
+//      confirmedTotal+=country.reports.last.confirmed;
+//      deathsTotal+=country.reports.last.deaths;
+//      recoveredTotal+=country.reports.last.recovered;
+//    }
+//    List<Report> worldwideTotals = new List<Report>();
+//    worldwideTotals.add(new Report(date: new DateTime.now(), confirmed: confirmedTotal, deaths: deathsTotal, recovered: recoveredTotal));
+//    countriesData.add(new Country(country: "Worldwide", reports: worldwideTotals));
+
     return countriesData;
   } else
     return null;
