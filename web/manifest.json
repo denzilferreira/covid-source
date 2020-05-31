@@ -1,8 +1,8 @@
 {
-    "name": "encounter",
-    "short_name": "encounter",
+    "name": "Encounter",
+    "short_name": "Encounter",
     "start_url": ".",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "Cross-platform contact tracing on the web",
