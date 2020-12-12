@@ -1,11 +1,11 @@
 {
-    "name": "Encounter",
-    "short_name": "Encounter",
+    "name": "flutter_encounter",
+    "short_name": "flutter_encounter",
     "start_url": ".",
-    "display": "fullscreen",
+    "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Cross-platform contact tracing on the web",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
