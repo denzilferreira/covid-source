@@ -14,17 +14,17 @@ Future<bool> getLatestData() async {
       await http.get('https://pomber.github.io/covid19/timeseries.json');
 
   if (response.statusCode == 200) {
+    
     Map<String, dynamic> data = jsonDecode(response.body);
 
     for (String country in data.keys) {
       print(country);
 
-      List<Report> reportsObs =
-          List<Report>.from(data[country].map((item) => Report.fromJson(item)));
+      List<Report> reportsObs = List<Report>.from(data[country].map((item) => new Report.fromJson(item)));
 
       print("Reports remotely: ${reportsObs.length}");
 
-      if (countries.get(country) != null) {
+      if (countries.containsKey(country)) {
         var dbCountry = countries.get(country);
         print("Reports locally:" + dbCountry.reports.length.toString());
 
@@ -34,7 +34,7 @@ Future<bool> getLatestData() async {
         if (newEntries > 0) {
           for (int i = dbCountry.reports.length; i < reportsObs.length; i++) {
             var dayReport = reportsObs.elementAt(i);
-            reports.put(dayReport.date.toIso8601String(), dayReport);
+            reports.put(dayReport.date.toIso8601String() + country, dayReport);
             dbCountry.reports.add(dayReport);
           }
         }
@@ -44,8 +44,7 @@ Future<bool> getLatestData() async {
 
         for (int i = 0; i < reportsObs.length; i++) {
           var dayReport = reportsObs.elementAt(i);
-          reports.put(dayReport.date.toIso8601String(), dayReport);
-
+          reports.put(dayReport.date.toIso8601String() + country, dayReport);
           countryObj.reports.add(dayReport);
         }
         countries.put(country, countryObj);
@@ -59,6 +58,12 @@ Future<bool> getLatestData() async {
 Future<List<Country>> getCountries() async {
   var countries = await Hive.openBox<Country>('countries');
   return countries.values.toList();
+}
+
+Future<List<Report>> getCountryReports(String country) async {
+  var countries = await Hive.openBox<Country>('countries');
+  var countryData = countries.get(country);
+  return countryData.reports;
 }
 
 @HiveType(typeId: 0)
