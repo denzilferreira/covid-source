@@ -1,4 +1,10 @@
 import 'package:encounter/covid_month_view.dart';
+import 'package:encounter/recommendations/hand_gel.dart';
+import 'package:encounter/recommendations/official_info.dart';
+import 'package:encounter/recommendations/social_distancing.dart';
+import 'package:encounter/recommendations/symptoms_aware.dart';
+import 'package:encounter/recommendations/wash_hands.dart';
+import 'package:encounter/recommendations/wear_mask.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
@@ -32,10 +38,12 @@ class EncounterHome extends StatefulWidget {
 }
 
 class _EncounterHomeState extends State<EncounterHome> {
-  String _country;
+  String _country = "";
   String _cases = "";
   String _recovered = "";
   String _died = "";
+
+  final cardsController = PageController(initialPage: 1, viewportFraction: .8);
 
   var _countries = <DropdownMenuItem>[];
   var _reports = <Report>[];
@@ -63,15 +71,19 @@ class _EncounterHomeState extends State<EncounterHome> {
 
     var prefs = await SharedPreferences.getInstance();
     var defaultCountry = prefs.getString("defaultCountry");
-    var defaultCountryData = await getCountryReports(defaultCountry);
+    if (defaultCountry != null) {
+      var defaultCountryData = await getCountryReports(defaultCountry);
+      setState(() {
+        _country = defaultCountry;
+        _reports = defaultCountryData;
+        _cases = _reports.last.confirmed.toString();
+        _recovered = _reports.last.recovered.toString();
+        _died = _reports.last.deaths.toString();
+      });
+    }
 
     setState(() {
       _countries = countries;
-
-      if (defaultCountry != null) {
-        _country = defaultCountry;
-        _reports = defaultCountryData;
-      }
     });
   }
 
@@ -84,6 +96,9 @@ class _EncounterHomeState extends State<EncounterHome> {
     setState(() {
       _country = defaultCountry;
       _reports = countryData;
+      _cases = _reports.last.confirmed.toString();
+      _recovered = _reports.last.recovered.toString();
+      _died = _reports.last.deaths.toString();
     });
   }
 
@@ -98,7 +113,7 @@ class _EncounterHomeState extends State<EncounterHome> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: SingleChildScrollView(
-              child: SafeArea(
+        child: SafeArea(
           minimum: EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,7 +134,7 @@ class _EncounterHomeState extends State<EncounterHome> {
                     padding: const EdgeInsets.all(24),
                     child: DropdownButton(
                       icon: Icon(
-                        Icons.arrow_drop_down,
+                        Icons.arrow_drop_down_sharp,
                         color: Colors.blue,
                       ),
                       isExpanded: true,
@@ -142,59 +157,107 @@ class _EncounterHomeState extends State<EncounterHome> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.white),
-                  padding: EdgeInsets.all(24),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Text(_cases),
-                            Text("Cases"),
-                          ],
+              Visibility(
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.white),
+                    padding: EdgeInsets.all(24),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Text(
+                                _cases,
+                                style: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey,
+                                    fontSize: 20),
+                              ),
+                              Text("Cases".toUpperCase(),
+                                  style: GoogleFonts.roboto(
+                                      letterSpacing: 1.5, fontSize: 10)),
+                            ],
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Text(_recovered),
-                            Text("Recovered"),
-                          ],
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Text(_recovered,
+                                  style: GoogleFonts.roboto(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.green,
+                                      fontSize: 20)),
+                              Text("Recovered".toUpperCase(),
+                                  style: GoogleFonts.roboto(
+                                      letterSpacing: 1.5, fontSize: 10)),
+                            ],
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Text(_died),
-                            Text("Died"),
-                          ],
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Text(_died,
+                                  style: GoogleFonts.roboto(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red,
+                                      fontSize: 20)),
+                              Text("Died".toUpperCase(),
+                                  style: GoogleFonts.roboto(
+                                      letterSpacing: 1.5, fontSize: 10)),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Container(
-                  height: 300,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.white),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: CovidMonthView(
-                      country: _country,
-                      reports: _reports,
+                      ],
                     ),
                   ),
                 ),
+                visible: (_cases.length > 0),
               ),
+              Visibility(
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: Container(
+                    height: 350,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: CovidMonthView(
+                        country: _country,
+                        reports: _reports,
+                      ),
+                    ),
+                  ),
+                ),
+                visible: (_country.length > 0),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 24, top: 16),
+                child: Text("WHO Recommendations",
+                    style: GoogleFonts.roboto(
+                        fontSize: 24, fontWeight: FontWeight.bold)),
+              ),
+              Container(
+                height: 120,
+                child: PageView(
+                  children: [
+                    WashHands(),
+                    WearMask(),
+                    HandGel(),
+                    SymptomsAware(),
+                    SocialDistancing(),
+                    OfficialInfo()
+                  ],
+                  onPageChanged: (value) {},
+                  controller: cardsController,
+                  allowImplicitScrolling: true,
+                ),
+              )
             ],
           ),
         ),

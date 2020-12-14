@@ -1,5 +1,7 @@
-import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:charts_flutter/flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 import 'database/covid_data.dart';
 
@@ -18,33 +20,37 @@ class CovidMonthView extends StatefulWidget {
 class _CovidMonthViewState extends State<CovidMonthView> {
   @override
   Widget build(BuildContext context) {
-    List<charts.Series<Report, String>> series = [
-      charts.Series(
+    List<Series<Report, String>> series = [
+      Series(
         data: widget.reports,
         id: "Confirmed",
         domainFn: (datum, index) => "${datum.date.month}",
         measureFn: (datum, index) => datum.confirmed,
-        colorFn: (datum, index) => charts.ColorUtil.fromDartColor(Colors.grey),
+        colorFn: (datum, index) => ColorUtil.fromDartColor(Colors.grey),
       ),
-      charts.Series(
+      Series(
         data: widget.reports,
         id: "Recovered",
         domainFn: (datum, index) => "${datum.date.month}",
         measureFn: (datum, index) => datum.recovered,
-        colorFn: (datum, index) => charts.ColorUtil.fromDartColor(Colors.green),
+        colorFn: (datum, index) => ColorUtil.fromDartColor(Colors.green),
       ),
-      charts.Series(
+      Series(
         data: widget.reports,
         id: "Deaths",
         domainFn: (datum, index) => "${datum.date.month}",
         measureFn: (datum, index) => datum.deaths,
-        colorFn: (datum, index) => charts.ColorUtil.fromDartColor(Colors.red),
+        colorFn: (datum, index) => ColorUtil.fromDartColor(Colors.red),
       ),
     ];
 
-    return charts.BarChart(
+    return BarChart(
       series,
       animate: true,
+      defaultInteractions: false,
+      primaryMeasureAxis: NumericAxisSpec(
+          tickFormatterSpec: BasicNumericTickFormatterSpec.fromNumberFormat(
+              NumberFormat.compact())),
     );
   }
 }
