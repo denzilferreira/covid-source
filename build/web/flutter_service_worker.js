@@ -32,17 +32,11 @@ const RESOURCES = {
 "assets/AssetManifest.json": "290a214cc89fa19db5842849acc85b9b",
 "assets/FontManifest.json": "7aaf3996738086bbd796613e14ef9e45",
 "assets/NOTICES": "3a4149dc13e3bd6d3a1d046b98d8b0b3",
-"assets/images/01.png": "27ee462dc893dafaa002829d64dc1a1a",
-"assets/images/02.png": "61553a8e181935e04b59e054f5ebd1e2",
-"assets/images/03.png": "d8c454ef4a5c136f48952424e2625172",
-"assets/images/04.png": "82541368cdee25c361e8aa107feec1bd",
-"assets/images/05.png": "78b69b07ffe73812298462e4959ddef2",
-"assets/images/06.png": "bc02e58f6e03cce3ad76997dca644ab9",
 "favicon.png": "b3e71d0c45d16c76cf1b2dce25390a6e",
 "icons/Icon-192.png": "37ded48235bb9705b64a81fc86e5b7dc",
 "icons/Icon-512.png": "109696d5875f456ac5bac3197b6f0761",
-"index.html": "44995fc948b9b646d2b814f18dc1a00c",
-"/": "44995fc948b9b646d2b814f18dc1a00c",
+"index.html": "242f90be6d91f761fc637bcb9a99ac53",
+"/": "242f90be6d91f761fc637bcb9a99ac53",
 "manifest.json": "c96adb09e119bfc1a2bd43035542f645"
 };
 
