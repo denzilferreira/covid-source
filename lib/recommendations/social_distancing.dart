@@ -19,7 +19,7 @@ class SocialDistancing extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
             child: Image(
                 image: AssetImage(
-                  "assets/images/05.png",
+                  "images/05.png",
                 ),
                 width: 120),
           ),

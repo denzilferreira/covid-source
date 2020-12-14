@@ -19,7 +19,7 @@ class WashHands extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
             child: Image(
                 image: AssetImage(
-                  "assets/images/01.png",
+                  "images/01.png",
                 ),
                 width: 120),
           ),

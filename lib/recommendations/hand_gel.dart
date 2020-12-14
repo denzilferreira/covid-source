@@ -19,7 +19,7 @@ class HandGel extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
             child: Image(
                 image: AssetImage(
-                  "assets/images/03.png",
+                  "images/03.png",
                 ),
                 width: 120),
           ),

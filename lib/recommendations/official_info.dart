@@ -19,7 +19,7 @@ class OfficialInfo extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
             child: Image(
                 image: AssetImage(
-                  "assets/images/06.png",
+                  "images/06.png",
                 ),
                 width: 120),
           ),

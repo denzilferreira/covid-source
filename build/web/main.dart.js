@@ -36030,22 +36030,22 @@ $1:function(a){},
 $S:150}
 O.AQ.prototype={
 M:function(a,b){var s=null,r=K.cZ(24),q=K.cZ(16),p=C.L.i(0,100),o=t.Ma
-return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("assets/images/03.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Hand rub",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Use alcohol-based hand rub or soap and water to eliminate germs.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
+return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("images/03.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Hand rub",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Use alcohol-based hand rub or soap and water to eliminate germs.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
 X.Cg.prototype={
 M:function(a,b){var s=null,r=K.cZ(24),q=K.cZ(16),p=C.L.i(0,100),o=t.Ma
-return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("assets/images/06.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Trusted info",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Read trusted sources, such as WHO or your local and national health authorities.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
+return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("images/06.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Trusted info",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Read trusted sources, such as WHO or your local and national health authorities.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
 O.EJ.prototype={
 M:function(a,b){var s=null,r=K.cZ(24),q=K.cZ(16),p=C.L.i(0,100),o=t.Ma
-return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("assets/images/05.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Social Distance",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Maintain at least a 1-metre distance between yourself and others, especially indoors.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
+return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("images/05.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Social Distance",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Maintain at least a 1-metre distance between yourself and others, especially indoors.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
 M.F3.prototype={
 M:function(a,b){var s=null,r=K.cZ(24),q=K.cZ(16),p=C.L.i(0,100),o=t.Ma
-return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("assets/images/04.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Symptoms aware",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Stay home and self-isolate even if you have minor symptoms, until you recover.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
+return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("images/04.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Symptoms aware",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Stay home and self-isolate even if you have minor symptoms, until you recover.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
 A.FF.prototype={
 M:function(a,b){var s=null,r=K.cZ(24),q=K.cZ(16),p=C.L.i(0,100),o=t.Ma
-return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("assets/images/01.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Good hygiene",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Regularly and thoroughly clean your hands.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
+return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("images/01.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Good hygiene",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Regularly and thoroughly clean your hands.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
 G.FG.prototype={
 M:function(a,b){var s=null,r=K.cZ(24),q=K.cZ(16),p=C.L.i(0,100),o=t.Ma
-return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("assets/images/02.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Wear mask",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Make wearing a mask a normal part of being around other people.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
+return M.bP(s,T.lW(H.c([M.bP(s,U.rI(new L.hk("images/02.png"),120),s,s,new S.c0(p,s,s,q,s,s,C.C),s,s,s,s),T.is(M.bP(s,T.ii(H.c([new T.ca(C.aK,L.cB("Wear mask",s,B.cn(s,24,C.R,s)),s),new T.ca(C.aK,L.cB("Make wearing a mask a normal part of being around other people.",!0,B.cn(s,16,s,s)),s)],o),C.a6,C.W),s,s,s,s,s,new V.aP(16,0,0,0),160))],o),C.a6,C.bU,C.W),s,s,new S.c0(C.j,s,s,r,s,s,C.C),s,s,s,s)}}
 X.dt.prototype={
 j:function(a){return this.b}}
 X.cE.prototype={

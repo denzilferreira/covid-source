@@ -19,7 +19,7 @@ class WearMask extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
             child: Image(
                 image: AssetImage(
-                  "assets/images/02.png",
+                  "images/02.png",
                 ),
                 width: 120),
           ),

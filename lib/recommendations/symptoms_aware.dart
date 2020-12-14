@@ -19,7 +19,7 @@ class SymptomsAware extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
             child: Image(
                 image: AssetImage(
-                  "assets/images/04.png",
+                  "images/04.png",
                 ),
                 width: 120),
           ),
