@@ -1,8 +1,6 @@
 name: encounter
 description: Cross-platform contact tracing on the web
-
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
-
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -31,9 +29,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/01.png
-    - assets/images/02.png
-    - assets/images/03.png
-    - assets/images/04.png
-    - assets/images/05.png
-    - assets/images/06.png
+    - images/
