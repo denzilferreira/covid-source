@@ -12,28 +12,23 @@ class SymptomsAware extends StatelessWidget {
         borderRadius: BorderRadius.circular(24)
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
-            child: Image(
-                image: AssetImage(
-                  "images/04.png",
-                ),
-                width: 120),
-          ),
+          Image(
+              image: AssetImage(
+                "images/04.png",
+              ),
+              width: 120),
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 16),
-              width: 160,
+              padding: EdgeInsets.only(left: 8, right: 8),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                 Padding(
                   padding: const EdgeInsets.only(top:8),
                   child: Text("Symptoms aware", style: GoogleFonts.roboto(
-                    fontSize: 24,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold
                     
                   ),),
@@ -43,7 +38,7 @@ class SymptomsAware extends StatelessWidget {
                   child: Text(
                     "Stay home and self-isolate even if you have minor symptoms, until you recover.",
                     softWrap: true,
-                    style: GoogleFonts.roboto(fontSize: 16),
+                    style: GoogleFonts.roboto(fontSize: 12),
                   ),
                 )
               ]),

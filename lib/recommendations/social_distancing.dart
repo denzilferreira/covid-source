@@ -12,28 +12,23 @@ class SocialDistancing extends StatelessWidget {
         borderRadius: BorderRadius.circular(24)
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16), color: Colors.grey[100]),
-            child: Image(
-                image: AssetImage(
-                  "images/05.png",
-                ),
-                width: 120),
-          ),
+          Image(
+              image: AssetImage(
+                "images/05.png",
+              ),
+              width: 120),
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 16),
-              width: 160,
+              padding: EdgeInsets.only(left: 8, right: 8),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                 Padding(
                   padding: const EdgeInsets.only(top:8),
                   child: Text("Social Distance", style: GoogleFonts.roboto(
-                    fontSize: 24,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold
                     
                   ),),
@@ -43,7 +38,7 @@ class SocialDistancing extends StatelessWidget {
                   child: Text(
                     "Maintain at least a 1-metre distance between yourself and others, especially indoors.",
                     softWrap: true,
-                    style: GoogleFonts.roboto(fontSize: 16),
+                    style: GoogleFonts.roboto(fontSize: 12),
                   ),
                 )
               ]),

@@ -11,37 +11,29 @@ Future<bool> getLatestData() async {
   var reports = await Hive.openBox<Report>('reports');
 
   final response =
-      await http.get('https://pomber.github.io/covid19/timeseries.json');
+      await http.get('https://pomber.github.io/covid19/timeseries.json')
+          .timeout(Duration(seconds: 10));
 
   if (response.statusCode == 200) {
-    
     Map<String, dynamic> data = jsonDecode(response.body);
-
     for (String country in data.keys) {
-      print(country);
-
       List<Report> reportsObs = List<Report>.from(data[country].map((item) => new Report.fromJson(item)));
-
-      print("Reports remotely: ${reportsObs.length}");
-
       if (countries.containsKey(country)) {
         var dbCountry = countries.get(country);
-        print("Reports locally:" + dbCountry.reports.length.toString());
-
         var newEntries = reportsObs.length - dbCountry.reports.length;
-        print("New reports $newEntries");
-
         if (newEntries > 0) {
           for (int i = dbCountry.reports.length; i < reportsObs.length; i++) {
             var dayReport = reportsObs.elementAt(i);
             reports.put(dayReport.date.toIso8601String() + country, dayReport);
             dbCountry.reports.add(dayReport);
           }
+        } else {
+          //we are all up to date
+          return true;
         }
       } else {
         var countryObj = Country(country: country);
         countryObj.reports = HiveList(reports);
-
         for (int i = 0; i < reportsObs.length; i++) {
           var dayReport = reportsObs.elementAt(i);
           reports.put(dayReport.date.toIso8601String() + country, dayReport);

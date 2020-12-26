@@ -1,6 +1,5 @@
 import 'package:charts_flutter/flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 import 'database/covid_data.dart';
@@ -47,7 +46,7 @@ class _CovidMonthViewState extends State<CovidMonthView> {
     return BarChart(
       series,
       animate: true,
-      defaultInteractions: false,
+      defaultInteractions: true,
       primaryMeasureAxis: NumericAxisSpec(
           tickFormatterSpec: BasicNumericTickFormatterSpec.fromNumberFormat(
               NumberFormat.compact())),
